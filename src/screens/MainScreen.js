@@ -11,7 +11,6 @@ const HomeScreen = () => (
 const SettingsScreen = () => (
   <View style={styles.container}>
     <Text>Settings</Text>
-    
   </View>
 );
 
