@@ -6,9 +6,9 @@ import { login } from '../redux/reducers/login.actions'; // importing our action
 
 import RTextInput from './TextInput';
 
-import { Button } from 'react-native-elements';
-import { FormLabel, FormInput } from 'react-native-elements'
+import { Button, FormLabel, FormInput } from 'react-native-elements'
 
+//eat me
 
 const Form = props =>{
 
