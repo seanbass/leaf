@@ -16,7 +16,7 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Form/>
+        <Form />
       </View>
     );
   }
@@ -33,5 +33,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: "center",
     justifyContent: "center"
-  }
+  },
 });

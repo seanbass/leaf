@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { reduxForm, Field} from 'redux-form';
 
 import { login } from '../redux/reducers/login.actions'; // importing our action
@@ -8,35 +8,36 @@ import RTextInput from './TextInput';
 
 import { Button, FormLabel, FormInput } from 'react-native-elements'
 
-//eat me
+const { width } = Dimensions.get('window');
 
-const Form = props =>{
+const Form = props => {
 
   const { handleSubmit } = props
 
   return (
-  <View keyboardShouldPersistTaps={'handled'}>
+  <View keyboardShouldPersistTaps={'handled'} style={styles.container}>
     <FormLabel>Email</FormLabel>
-     <FormInput 
+     <Field
         style={styles.field}
         name={'email'}
         component={RTextInput}
         autoCapitalize={'none'}
      />
       <FormLabel>Password</FormLabel>
-      <FormInput
+      <Field
         style={styles.field}
         name={'password'}
         component={RTextInput}
         secureTextEntry={true}
         autoCapitalize={'none'}
-      />
+       /> 
+
       <Button style={styles.ButtonStyle}
-      raised
-      large
-      onPress={handleSubmit(login)} 
-      title="Login"
-      color="white"
+        raised
+        large
+        onPress={handleSubmit(login)}
+        title="Login"
+        color="white"
       />
   </View>
   );
@@ -47,8 +48,17 @@ export default reduxForm({
 })(Form);
 
 const styles = StyleSheet.create({
+  container: { 
+    flex: 1,
+    //flexDirection: "row",
+    //alignItems: 'center',
+    justifyContent: 'center',
+    width: width,
+  },
   field: { 
-    width: 300,
+    alignSelf: 'center',
+    minHeight: 46,
+    width: width - 30,
   },
   ButtonStyle: {
   }
