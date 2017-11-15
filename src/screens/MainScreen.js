@@ -2,9 +2,12 @@ import React from 'react';
 import { StyleSheet, View, Text} from 'react-native';
 import { TabNavigator } from "react-navigation";
 
+import LogoutButton from "../components/LogoutButton"
+
 const HomeScreen = () => (
   <View style={styles.container}>
     <Text>Welcome</Text>
+    <LogoutButton />
   </View>
 );
 

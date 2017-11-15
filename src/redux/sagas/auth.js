@@ -52,11 +52,16 @@ const loginSuccessSaga = function * () {
   yield put(NavigationActions.navigate({ routeName: 'Main' }));
 }
 
+const logoutSuccessSaga = function * () {
+  yield put(NavigationActions.navigate({ routeName: 'Login' }));
+}
+
 const loginRootSaga = function * (){
   yield fork(syncUserSaga);
   yield [
     takeLatest(types.LOGIN.SUCCESS, loginSuccessSaga),
     takeLatest('@@redux-form/SET_SUBMIT_SUCCEEDED', loginSaga),
+    takeLatest(types.LOGOUT.SUCCESS, logoutSuccessSaga),
     //takeLatest(types.LOGIN.REQUEST, loginSaga),
     takeLatest(types.LOGOUT.REQUEST, logoutSaga),
   ];

@@ -1,5 +1,5 @@
 //import functions from './functions';
-import login from './login';
+import auth from './auth';
 
 
 const rootSaga = function * rootSaga() {
@@ -7,7 +7,7 @@ const rootSaga = function * rootSaga() {
     //analytics(),
     //firestore(),
     //functions(),
-    login(),
+    auth(),
     //messaging(),
     //storage(),
     // todos(),
