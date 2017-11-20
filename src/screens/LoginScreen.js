@@ -16,6 +16,7 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+      <Image style={styles.logo} source={require("../../assets/images/FH3.png")}/>
         <Form />
       </View>
     );
@@ -34,4 +35,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+  logo: {
+    width: 100,
+    height: 100,
+  }
 });
