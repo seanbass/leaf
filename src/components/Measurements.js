@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Image,
   Platform,
@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import { Button, List, ListItem, Card } from 'react-native-elements';
+import Chart from '../components/ChartTest';
 
 
 
@@ -83,11 +84,15 @@ componentWillUnmount(){
       <View style={styles.container}>
          <Card title="Temperature">
             <Measurement value={this.state.temp}/>
-            <Image source={require("../../assets/images/temperaturePic.png")}/>
+              
           </Card>
             <Card title="Humidty">
-            <Measurement value={this.state.hum}/>
-             <Image source={require("../../assets/images/temperaturePic.png")}/>
+             <Measurement value={this.state.hum}/>
+              <Image source={require("../../assets/images/temperaturePic.png")}/>
+          </Card>
+          <Card title="Ph">
+            <Measurement value={this.state.ph}/>
+              
           </Card>
       </View>
     )

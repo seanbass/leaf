@@ -31,7 +31,6 @@ const Form = props => {
         secureTextEntry={true}
         autoCapitalize={'none'}
        /> 
-
       <Button style={styles.ButtonStyle}
         raised
         large
@@ -49,7 +48,6 @@ export default reduxForm({
 
 const styles = StyleSheet.create({
   container: { 
-    flex: 1,
     //flexDirection: "row",
     //alignItems: 'center',
     justifyContent: 'center',

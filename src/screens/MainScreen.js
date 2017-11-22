@@ -5,6 +5,12 @@ import { TabNavigator } from "react-navigation";
 import LogoutButton from "../components/LogoutButton"
 import HomeScreen from "./HomeScreen"
 
+const ScheduleScreen = () => (
+  <View style={styles.container}>
+    <Text>Schedule</Text>
+  </View>
+);
+
 const SettingsScreen = () => (
   <View style={styles.container}>
     <Text>Settings</Text>
@@ -12,8 +18,10 @@ const SettingsScreen = () => (
   </View>
 );
 
+
 const MainScreenNavigator = TabNavigator({
   Home: { screen: HomeScreen },
+  Schedule: { screen: ScheduleScreen },
   Settings: { screen: SettingsScreen },
 });
 
