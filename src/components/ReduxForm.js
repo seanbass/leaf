@@ -35,7 +35,7 @@ const Form = props => {
         raised
         large
         onPress={handleSubmit(login)}
-        title="Login"
+        title="                            LOGIN                            "
         color="white"
       />
   </View>
@@ -57,7 +57,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     minHeight: 46,
     width: width - 30,
+    borderBottomColor: '#bbb',
+    borderBottomWidth: StyleSheet.hairlineWidth
   },
   ButtonStyle: {
+    position: 'absolute',
+    marginTop: 20,
   }
 })

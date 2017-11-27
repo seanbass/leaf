@@ -102,7 +102,7 @@ componentWillUnmount(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#7fffd4',
     paddingVertical: 30,
   },
   header: {
