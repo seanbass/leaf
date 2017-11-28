@@ -35,7 +35,7 @@ const Form = props => {
         raised
         large
         onPress={handleSubmit(login)}
-        title="                            LOGIN                            "
+        title="                           LOGIN                           "
         color="white"
       />
   </View>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: width,
   },
-  field: { 
+  field: {
     alignSelf: 'center',
     minHeight: 46,
     width: width - 30,

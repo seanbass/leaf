@@ -15,20 +15,16 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+    <View style={styles.container}>
       <Image style={styles.logo} source={require("../../assets/images/FH3.png")}/>
         <Form />
-      </View>
+    </View>
+    
     );
   }
 }
 
 const styles = StyleSheet.create({
-  titleText: { 
-    fontSize: 25,
-    textAlign: "center",
-    backgroundColor: '#FDD7E4',
-  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -36,7 +32,9 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   logo: {
-    width: 120,
-    height: 200,
-  }
+    height: 240,
+    width: 140,
+    justifyContent: "flex-start",
+    //marginBottom: 20
+  },
 });
