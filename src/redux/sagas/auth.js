@@ -1,4 +1,4 @@
-import { call, fork, put, take, takeLatest, select} from 'redux-saga/effects';
+import { call, fork, put, take, takeLatest, select, all} from 'redux-saga/effects';
 import * as selectors from '../selectors';
 import { NavigationActions } from 'react-navigation';
 
@@ -9,11 +9,14 @@ import {
   logoutSuccess,
   logoutFailure,
   syncUser,
+  registerFailure,
 } from '../reducers/login.actions';
 
 import rsf from '../../rsf';
 
 //const authProvider = new firebase.auth.GoogleAuthProvider();
+
+import {DropDownHolder} from '../../refs/DropDownHolder';
 
 const loginSaga = function * () {
   try {
@@ -24,6 +27,20 @@ const loginSaga = function * () {
   }
   catch(error) {
     yield put(loginFailure(error));
+    yield call(DropDownHolder.dropDown.alertWithType,'error', 'Error', error.toString())
+  }
+}
+
+const registerSaga = function * () {
+  try {
+    let email = yield select(selectors.email)
+    let password = yield select(selectors.password)
+    const data = yield call(rsf.auth.createUserWithEmailAndPassword, email, password);
+    yield put(loginSuccess(data));
+  }
+  catch(error){
+    yield put(registerFailure(error))
+    yield call(DropDownHolder.dropDown.alertWithType,'error', 'Error', error.toString())
   }
 }
 
@@ -58,13 +75,13 @@ const logoutSuccessSaga = function * () {
 
 const loginRootSaga = function * (){
   yield fork(syncUserSaga);
-  yield [
+  yield all([
     takeLatest(types.LOGIN.SUCCESS, loginSuccessSaga),
     takeLatest('@@redux-form/SET_SUBMIT_SUCCEEDED', loginSaga),
     takeLatest(types.LOGOUT.SUCCESS, logoutSuccessSaga),
-    //takeLatest(types.LOGIN.REQUEST, loginSaga),
+    takeLatest(types.REGISTER.REQUEST, registerSaga),
     takeLatest(types.LOGOUT.REQUEST, logoutSaga),
-  ];
+  ]);
 }
 
 export default loginRootSaga

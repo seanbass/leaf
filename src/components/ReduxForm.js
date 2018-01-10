@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { reduxForm, Field} from 'redux-form';
 
-import { login } from '../redux/reducers/login.actions'; // importing our action
+import { login, register } from '../redux/reducers/login.actions'; // importing our action
 
 import RTextInput from './TextInput';
 
@@ -30,12 +30,17 @@ const Form = props => {
         secureTextEntry={true}
         autoCapitalize={'none'}
        /> 
-      <SocialIcon style={styles.ButtonStyle}
-      button
-      raised
+      <Button style={styles.ButtonStyle}
       onPress={handleSubmit(login)}
       title="LOG IN"
-      iconColor='red'
+      containerViewStyle={{ borderRadius: 10}}
+      borderRadius={10}
+      />
+      <Button style={styles.ButtonStyle}
+      onPress={handleSubmit(register)}
+      title="REGISTER"
+      containerViewStyle={{ borderRadius: 10}}
+      borderRadius={10}
       />
       <Text style={styles.ForgotPw}>Forgot Password?</Text>
       <Text style={styles.CreateAccount}>Create Account</Text>
@@ -60,11 +65,11 @@ const styles = StyleSheet.create({
     width: width - 30,
     borderBottomColor: '#bbb',
     borderBottomWidth: StyleSheet.hairlineWidth,
-    color: 'white',
+    color: 'white'
   },
   ButtonStyle: {
-    marginTop: 40,
-    backgroundColor: 'white',
+    //marginTop: 40,
+    //backgroundColor: 'white',
     },
   ForgotPw: {
     marginTop: 20,

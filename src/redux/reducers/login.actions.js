@@ -9,6 +9,11 @@ export const types = {
       SUCCESS: 'LOGOUT.SUCCESS',
       FAILURE: 'LOGOUT.FAILURE',
     },
+    REGISTER: {
+      REQUEST: 'REGISTER.REQUEST',
+      SUCCESS: 'REGISTER.SUCCESS',
+      FAILURE: 'REGISTER.FAILURE'
+    },
     SYNC_USER: 'SYNC_USER',
   };
   
@@ -42,4 +47,16 @@ export const types = {
   export const syncUser = user => ({
     type: types.SYNC_USER,
     user,
+  });
+
+  export const register = () => ({
+    type: types.REGISTER.REQUEST
+  });
+
+  export const registerFailure = () => ({
+    type: types.REGISTER.FAILURE
+  });
+
+  export const registerSuccess = () => ({
+    type: types.REGISTER.SUCCESS
   });

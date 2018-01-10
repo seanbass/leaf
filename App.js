@@ -12,6 +12,10 @@ const store = configureStore()
 //Reactotron
 import './ReactotronConfig'
 
+//Alert
+import DropdownAlert from 'react-native-dropdownalert';
+import { DropDownHolder } from './src/refs/DropDownHolder';
+
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
@@ -34,6 +38,7 @@ export default class App extends React.Component {
             {Platform.OS === 'android' &&
               <View style={styles.statusBarUnderlay} />}
             <RootNavigation />
+            <DropdownAlert ref={(ref) => DropDownHolder.setDropDown(ref)}/>
           </View>
         </Provider>
       );
