@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { reduxForm, Field} from 'redux-form';
+import PropTypes from 'prop-types';
 
 import { login, register } from '../redux/reducers/login.actions'; // importing our action
 
@@ -9,11 +10,13 @@ import RTextInput from './TextInput';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
 import { SocialIcon } from 'react-native-elements'
 
+//Redux
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 const { width } = Dimensions.get('window');
 
 const Form = props => {
-
-  const { handleSubmit } = props
 
   return (
   <View keyboardShouldPersistTaps={'handled'} style={styles.container}>
@@ -31,22 +34,40 @@ const Form = props => {
         autoCapitalize={'none'}
        /> 
       <Button style={styles.ButtonStyle}
-      onPress={handleSubmit(login)}
+      onPress={props.handleLogin}
       title="LOG IN"
-      containerViewStyle={{ borderRadius: 10}}
+      containerViewStyle={{ borderRadius: 10, margin: 5}}
       borderRadius={10}
+      raised={true}
+      backgroundColor={"#fff"}
+      color={"#000"}
       />
       <Button style={styles.ButtonStyle}
-      onPress={handleSubmit(register)}
+      onPress={props.handleRegister}
       title="REGISTER"
-      containerViewStyle={{ borderRadius: 10}}
+      containerViewStyle={{ borderRadius: 10, margin: 5}}
       borderRadius={10}
+      raised={true}
+      backgroundColor={"#fff"}
+      color={"#000"}
       />
       <Text style={styles.ForgotPw}>Forgot Password?</Text>
       <Text style={styles.CreateAccount}>Create Account</Text>
   </View>
   );
 }
+
+Form.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleRegister: PropTypes.func.isRequired
+}
+
+const mapDispatchToProps = ( dispatch ) => bindActionCreators({
+  handleLogin: () => login(),
+  handleRegister: () => register(),
+}, dispatch)
+
+Form = connect(null, mapDispatchToProps)(Form) //docs suggest to do it this way
 
 export default reduxForm({ 
   form: 'login'
@@ -68,7 +89,6 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   ButtonStyle: {
-    //marginTop: 40,
     //backgroundColor: 'white',
     },
   ForgotPw: {

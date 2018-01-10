@@ -76,8 +76,8 @@ const logoutSuccessSaga = function * () {
 const loginRootSaga = function * (){
   yield fork(syncUserSaga);
   yield all([
+    takeLatest(types.LOGIN.REQUEST, loginSaga),
     takeLatest(types.LOGIN.SUCCESS, loginSuccessSaga),
-    takeLatest('@@redux-form/SET_SUBMIT_SUCCEEDED', loginSaga),
     takeLatest(types.LOGOUT.SUCCESS, logoutSuccessSaga),
     takeLatest(types.REGISTER.REQUEST, registerSaga),
     takeLatest(types.LOGOUT.REQUEST, logoutSaga),
