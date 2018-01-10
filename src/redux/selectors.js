@@ -1,2 +1,2 @@
-export const email = (state) => state.form.login.values.email;
-export const password = (state) => state.form.login.values.password;
+export const email = (state) => 'values' in state.form.login ? state.form.login.values.email : "";
+export const password = (state) => 'values' in state.form.login ? state.form.login.values.password : "";
