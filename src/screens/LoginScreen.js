@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import Form from '../components/ReduxForm'
+import { SocialIcon } from 'react-native-elements'
 
 export default class LoginScreen extends React.Component {
   static navigationOptions = {
@@ -16,7 +17,8 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require("../../assets/images/FH3.png")}/>
+      <Text style={styles.title}>Welcome</Text>
+      <Text style={styles.subtitle}>Log in to access your device.</Text>
         <Form />
     </View>
     
@@ -27,7 +29,7 @@ export default class LoginScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#3e9b54',
     alignItems: "center",
     justifyContent: "center"
   },
@@ -37,4 +39,13 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     //marginBottom: 20
   },
+  title: {
+    fontSize: 40,
+    color: 'white',
+  },
+  subtitle: {
+    marginBottom: 100,
+    fontSize: 20,
+    color: 'white',
+  }
 });

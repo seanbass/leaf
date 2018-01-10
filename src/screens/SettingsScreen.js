@@ -16,6 +16,7 @@ import {
 import { Button, List, ListItem, Card } from 'react-native-elements';
 import LogoutButton from "../components/LogoutButton";
 import SettingsList from "../components/Settings";
+import HeaderNav from '../components/MyHeader';
 
 
 
@@ -27,7 +28,8 @@ export default class SettingsScreen extends React.Component {
 
   render() {
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView>
+            <HeaderNav />
             <SettingsList />
         </ScrollView>
     );
@@ -40,28 +42,7 @@ export default class SettingsScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgrey',
+    backgroundColor: '#fff',
     paddingVertical: 30,
   },
-  header: {
-    flex: 1,
-    paddingVertical: 30,
-    paddingHorizontal: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: '500',
-    marginBottom: 4,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: 'black',
-  },
-  subTitle: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginBottom: 12,
-    color: 'red',
-  },
-  description: {
-    fontSize: 16.
-  }
 });

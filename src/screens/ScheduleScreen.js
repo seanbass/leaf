@@ -15,18 +15,20 @@ import {
 
 import { Button, List, ListItem, Card } from 'react-native-elements';
 import LogoutButton from "../components/LogoutButton"
+import HeaderNav from '../components/MyHeader';
 
 
 
 export default class ScheduleScreen extends React.Component {
   static navigationOptions = {
-    title: null,
+    title: 'Schedule',
   };
 
 
   render() {
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView>
+          <HeaderNav />
           <LogoutButton />
         </ScrollView>
     );
@@ -39,7 +41,7 @@ export default class ScheduleScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightgrey',
+    backgroundColor: '#fff',
     paddingVertical: 30,
   },
   header: {

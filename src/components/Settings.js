@@ -13,19 +13,19 @@ import { List, ListItem } from 'react-native-elements'
 const list = [
   {
     title: 'Logout',
-    icon: 'av-timer',
+    icon: 'lock-outline',
   },
   {
     title: 'Calibrate',
-    icon: 'flight-takeoff'
+    icon: 'local-drink'
   },
   {
     title: 'Updates',
-    icon: 'flight-takeoff'
-  },
+    icon: 'sync'
+},
 ];
 
-export default class SettingsList extends React.Component {
+class SettingsList extends React.Component {
     render(){
         return(
             <View>
@@ -44,3 +44,4 @@ export default class SettingsList extends React.Component {
     }
 }
 
+export default SettingsList;

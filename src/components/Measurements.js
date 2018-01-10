@@ -41,7 +41,6 @@ export class MeasurementContainer extends React.Component {
     };
   }
 
-
 /*
   fetch() {
     var handle = setInterval( () => { 
@@ -60,7 +59,7 @@ export class MeasurementContainer extends React.Component {
 componentWillUnmount(){
     clearInterval(handle)
 }
-*/
+
 
   getTempHumid = () => {
     return fetch('http://192.168.0.107:8888')
@@ -79,20 +78,18 @@ componentWillUnmount(){
       });
   }
 
+*/
   render(){
     return (
       <View style={styles.container}>
          <Card title="Temperature">
             <Measurement value={this.state.temp}/>
-              
           </Card>
             <Card title="Humidty">
              <Measurement value={this.state.hum}/>
-              <Image source={require("../../assets/images/temperaturePic.png")}/>
           </Card>
           <Card title="Ph">
             <Measurement value={this.state.ph}/>
-              
           </Card>
       </View>
     )

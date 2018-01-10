@@ -15,7 +15,7 @@ class Chart extends Component {
   render() {
     return (
       <View>
-
+        <VictoryBar />
       </View>
     );
   }

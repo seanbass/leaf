@@ -7,6 +7,7 @@ import { login } from '../redux/reducers/login.actions'; // importing our action
 import RTextInput from './TextInput';
 
 import { Button, FormLabel, FormInput } from 'react-native-elements'
+import { SocialIcon } from 'react-native-elements'
 
 const { width } = Dimensions.get('window');
 
@@ -17,8 +18,7 @@ const Form = props => {
   return (
   <View keyboardShouldPersistTaps={'handled'} style={styles.container}>
     <FormLabel>Email</FormLabel>
-     <Field
-        style={styles.field}
+     <Field style={styles.field}
         name={'email'}
         component={RTextInput}
         autoCapitalize={'none'}
@@ -31,13 +31,16 @@ const Form = props => {
         secureTextEntry={true}
         autoCapitalize={'none'}
        /> 
-      <Button style={styles.ButtonStyle}
-        raised
-        large
-        onPress={handleSubmit(login)}
-        title="                           LOGIN                           "
-        color="white"
+      <SocialIcon style={styles.ButtonStyle}
+      button
+      raised
+      onPress={handleSubmit(login)}
+      title="LOG IN"
+      iconColor='red'
+      light='true'
       />
+      <Text style={styles.ForgotPw}>Forgot Password?</Text>
+      <Text style={styles.CreateAccount}>Create Account</Text>
   </View>
   );
 }
@@ -58,10 +61,23 @@ const styles = StyleSheet.create({
     minHeight: 46,
     width: width - 30,
     borderBottomColor: '#bbb',
-    borderBottomWidth: StyleSheet.hairlineWidth
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    color: 'white',
+    //Form.name: 'white',
   },
   ButtonStyle: {
-    position: 'absolute',
+    marginTop: 40,
+  },
+  ForgotPw: {
     marginTop: 20,
+    color: 'white',
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  CreateAccount: {
+    marginTop: 20,
+    color: 'white',
+    justifyContent: 'center',
+    alignSelf: 'center',
   }
 })
