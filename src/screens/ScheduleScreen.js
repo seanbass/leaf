@@ -29,7 +29,6 @@ export default class ScheduleScreen extends React.Component {
     return (
         <ScrollView>
           <HeaderNav />
-          <LogoutButton />
         </ScrollView>
     );
   }

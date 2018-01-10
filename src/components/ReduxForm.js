@@ -17,15 +17,14 @@ const Form = props => {
 
   return (
   <View keyboardShouldPersistTaps={'handled'} style={styles.container}>
-    <FormLabel>Email</FormLabel>
+    <FormLabel labelStyle={styles.Label}>Email</FormLabel>
      <Field style={styles.field}
         name={'email'}
         component={RTextInput}
         autoCapitalize={'none'}
      />
-      <FormLabel>Password</FormLabel>
-      <Field
-        style={styles.field}
+      <FormLabel labelStyle={styles.Label}>Password</FormLabel>
+      <Field style={styles.field}
         name={'password'}
         component={RTextInput}
         secureTextEntry={true}
@@ -37,7 +36,6 @@ const Form = props => {
       onPress={handleSubmit(login)}
       title="LOG IN"
       iconColor='red'
-      light='true'
       />
       <Text style={styles.ForgotPw}>Forgot Password?</Text>
       <Text style={styles.CreateAccount}>Create Account</Text>
@@ -63,11 +61,11 @@ const styles = StyleSheet.create({
     borderBottomColor: '#bbb',
     borderBottomWidth: StyleSheet.hairlineWidth,
     color: 'white',
-    //Form.name: 'white',
   },
   ButtonStyle: {
     marginTop: 40,
-  },
+    backgroundColor: 'white',
+    },
   ForgotPw: {
     marginTop: 20,
     color: 'white',
@@ -79,5 +77,8 @@ const styles = StyleSheet.create({
     color: 'white',
     justifyContent: 'center',
     alignSelf: 'center',
+  },
+  Label: {
+    color: 'white',
   }
 })

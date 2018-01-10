@@ -9,10 +9,10 @@ class HeaderNav extends React.Component {
         return(
             <View>
                 <Header
-                    leftComponent={{ icon: 'menu', color: '#fff' }}
-                    centerComponent={{ text: 'Leaf', style: { color: '#fff' } }}
+                    leftComponent={{ icon: 'menu', color: 'black' }}
+                    centerComponent={{ text: 'Leaf', style: { color: 'black' } }}
                     //rightComponent={{ icon: 'home', color: '#fff' }}
-                    outerContainerStyles={{ backgroundColor: '#3e9b54' }}
+                    outerContainerStyles={{ backgroundColor: '#fff' }}
                     //innerContainerStyles={{ justifyContent: 'space-around',}}
                 />
             </View>
