@@ -14,6 +14,8 @@ import { SocialIcon } from 'react-native-elements'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+
+
 const { width } = Dimensions.get('window');
 
 const Form = props => {
@@ -36,14 +38,14 @@ const Form = props => {
       <Button style={styles.ButtonStyle}
       onPress={props.handleLogin}
       title="LOG IN"
-      containerViewStyle={{ borderRadius: 10, margin: 5}}
+      containerViewStyle={{ borderRadius: 10, margin: 5, marginTop: 25}}
       borderRadius={10}
       raised={true}
       backgroundColor={"#fff"}
       color={"#000"}
       />
       <Button style={styles.ButtonStyle}
-      onPress={props.handleRegister}
+      //onPress={props.handleRegister}
       title="REGISTER"
       containerViewStyle={{ borderRadius: 10, margin: 5}}
       borderRadius={10}
@@ -52,7 +54,6 @@ const Form = props => {
       color={"#000"}
       />
       <Text style={styles.ForgotPw}>Forgot Password?</Text>
-      <Text style={styles.CreateAccount}>Create Account</Text>
   </View>
   );
 }
@@ -61,6 +62,7 @@ Form.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleRegister: PropTypes.func.isRequired
 }
+
 
 const mapDispatchToProps = ( dispatch ) => bindActionCreators({
   handleLogin: () => login(),
