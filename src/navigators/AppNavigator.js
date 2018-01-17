@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import LoginScreen from '../screens/LoginScreen';
-import MainScreenNavigator from '../screens/MainScreen';
+import MainNavigator from './MainNavigator';
 
 export const AppNavigator = StackNavigator({
   Login: { screen: LoginScreen },
-  Main: { screen: MainScreenNavigator },
+  Main: { screen: MainNavigator },
 }, {
   headerMode: 'none'
 });

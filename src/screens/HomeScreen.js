@@ -15,27 +15,28 @@ import {
 import { Button, List, ListItem, Card, } from 'react-native-elements';
 import Chart from '../components/ChartTest';
 import { Measurement, MeasurementContainer } from '../components/Measurements';
-import HeaderNav from '../components/MyHeader';
 
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Home',
+    drawerLabel: 'Home',
+    /*drawerIcon: ({ tintColor }) => (
+      <Image
+        source={require('./chats-icon.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),*/
   };
 
 
   render() {
     return (
         <ScrollView>
-          <HeaderNav />
           <MeasurementContainer />
         </ScrollView>
     );
   }
 }
-
-
-
 
 const styles = StyleSheet.create({
   container: {

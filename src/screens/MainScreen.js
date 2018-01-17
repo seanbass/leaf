@@ -7,8 +7,6 @@ import HomeScreen from "./HomeScreen";
 import SettingsScreen from "./SettingsScreen";
 import ScheduleScreen from "./ScheduleScreen";
 
-import { List, ListItem } from 'react-native-elements';
-
 
 const MainScreenNavigator = TabNavigator({
   Home: { screen: HomeScreen },
