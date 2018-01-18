@@ -50,11 +50,8 @@ const DrawerNavigation = StackNavigator({
     headerStyle: {backgroundColor: 'white'},
     title: 'Leaf',
     headerTintColor: '#3e9b54',
-    headerLeft: <Text onPress={() => 
-      navigation.navigate('DrawerToggle')}><Text>
-        <Icon name="ios-list" marginLeft={20} size={40}/>
-          </Text>
-        </Text>
+    headerLeft: <Icon name="ios-list" marginLeft={20} size={40} onPress={() => 
+      navigation.navigate('DrawerToggle')}/>
   })
 })
 
