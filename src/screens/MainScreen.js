@@ -8,7 +8,6 @@ import SettingsScreen from "./SettingsScreen";
 import ScheduleScreen from "./ScheduleScreen";
 
 
-
 const MainScreenNavigator = TabNavigator({
   Home: { screen: HomeScreen },
   Schedule: { screen: ScheduleScreen, },
