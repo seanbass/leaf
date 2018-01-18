@@ -31,7 +31,7 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-        <ScrollView>
+        <ScrollView style={styles.container}>
           <MeasurementContainer />
         </ScrollView>
     );

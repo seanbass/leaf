@@ -5,6 +5,7 @@ import { StackNavigator, DrawerNavigator, TabNavigator } from "react-navigation"
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import ScheduleScreen from "../screens/ScheduleScreen";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 const SampleScreen = () => (
@@ -15,7 +16,7 @@ const SampleScreen = () => (
 
 const ProfileScreen = () => (
     <View style={styles.container}>
-      <Text>Sample</Text>
+      <Text>Put Profile Here</Text>
     </View>
   );
 
@@ -27,9 +28,9 @@ const HomeTabs = TabNavigator({
 {
   tabBarOptions : {
     inactiveTintColor: '#ffffff',
-    activeTintColor: '#000000',
+    activeTintColor: 'lightgrey',
     style: {
-      backgroundColor: '#2f90f3',
+      backgroundColor: '#3e9b54',
     }
   }
 })
@@ -46,11 +47,14 @@ const DrawerNavigation = StackNavigator({
 }, {
   headerMode: 'float',
   navigationOptions: ({navigation}) => ({
-    headerStyle: {backgroundColor: '#2f90f3'},
-    title: 'Welcome!',
-    headerTintColor: 'white',
+    headerStyle: {backgroundColor: 'white'},
+    title: 'Leaf',
+    headerTintColor: '#3e9b54',
     headerLeft: <Text onPress={() => 
-      navigation.navigate('DrawerToggle')}>Menu</Text>
+      navigation.navigate('DrawerToggle')}><Text>
+        <Icon name="ios-list" marginLeft={20} size={40}/>
+          </Text>
+        </Text>
   })
 })
 
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     //justifyContent: 'center',
     //alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
   },
 });
 

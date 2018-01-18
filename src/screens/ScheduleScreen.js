@@ -27,8 +27,7 @@ export default class ScheduleScreen extends React.Component {
 
   render() {
     return (
-        <ScrollView>
-          <HeaderNav />
+        <ScrollView style={styles.container}>
         </ScrollView>
     );
   }

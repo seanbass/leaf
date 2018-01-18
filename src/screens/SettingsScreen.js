@@ -28,8 +28,7 @@ export default class SettingsScreen extends React.Component {
 
   render() {
     return (
-        <ScrollView>
-            <HeaderNav />
+        <ScrollView style={styles.container}>
             <SettingsList />
         </ScrollView>
     );
