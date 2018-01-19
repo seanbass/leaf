@@ -5,6 +5,7 @@ import { StackNavigator, DrawerNavigator, TabNavigator } from "react-navigation"
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import ScheduleScreen from "../screens/ScheduleScreen";
+
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
@@ -35,6 +36,7 @@ const HomeTabs = TabNavigator({
   }
 })
 
+
 const DrawerStack = DrawerNavigator({
   Home: { screen: HomeTabs },
   Sample: { screen: SampleScreen },
@@ -54,6 +56,18 @@ const DrawerNavigation = StackNavigator({
       navigation.navigate('DrawerToggle')}/>
   })
 })
+
+
+// Sean Working On Settings Nav
+/**
+const SettingsStack = StackNavigator({
+  Logout: { screen: Logout},
+  Calibrate: { screen: Calibrate },
+  Update: { screen: Update },
+})
+
+**/
+
 
 const styles = StyleSheet.create({
   container: {
