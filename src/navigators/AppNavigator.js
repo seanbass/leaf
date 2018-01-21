@@ -6,10 +6,12 @@ import { connect } from 'react-redux';
 
 import LoginScreen from '../screens/LoginScreen';
 import MainNavigator from './MainNavigator';
+import SettingsScreen from "../screens/SettingsScreen";
 
 export const AppNavigator = StackNavigator({
   Login: { screen: LoginScreen },
   Main: { screen: MainNavigator },
+  Setting: { screen: SettingsScreen}
 }, {
   headerMode: 'none'
 });
