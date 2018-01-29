@@ -21,7 +21,7 @@ export default class Profile extends Component {
           Sean
         </Text>
       </Image>
-      
+
     )
   }
 }
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   nameText: {
-    backgroundColor: "green",
+    backgroundColor: "#3e9b54",
     paddingLeft: 20,
     paddingVertical: 5,
     fontSize: 32,

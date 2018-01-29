@@ -8,17 +8,51 @@ import {
   View, 
 } from 'react-native';
 
-import { VictoryBar, VictoryArea, VictoryChart, } from "victory-native";
+import { VictoryBar, VictoryArea, VictoryChart, AreaSmoothedChart} from "victory-native";
 import Svg from "react-native-svg";
 
 class Chart extends Component {
   render() {
     return (
-      <View>
-        <VictoryBar />
-      </View>
+      <View style={styles.chartBlock}>
+
+        </View>
     );
   }
 }
 
 export default Chart;
+
+const styles = StyleSheet.create({
+  screen: {
+    paddingHorizontal: 15,
+  },
+  statItems: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginVertical: 15,
+  },
+  statItemContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderRadius: 3,
+    paddingHorizontal: 10,
+    paddingVertical: 10
+  },
+  statItemIcon: {
+    alignSelf: 'center',
+    marginLeft: 10,
+    color: 'white',
+  },
+  statItemValue: {
+    color: 'white',
+  },
+  statItemName: {
+    color: 'white',
+  },
+  chartBlock: {
+    padding: 15,
+    marginBottom: 15,
+    justifyContent: 'center'
+  },
+});

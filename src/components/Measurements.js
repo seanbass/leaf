@@ -91,6 +91,7 @@ componentWillUnmount(){
           <Card title="Ph">
             <Measurement value={this.state.ph}/>
           </Card>
+          <Chart />
       </View>
     )
   }

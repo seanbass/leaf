@@ -11,12 +11,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {RkConfig, RkButton, RkText} from 'react-native-ui-kitten';
 
 
-const SampleScreen = () => (
-  <View style={styles.container}>
-    <Text>Sample</Text>
-  </View>
-);
-
 const ProfileScreen = () => (
     <View style={styles.container}>
      <Profile />
@@ -26,7 +20,7 @@ const ProfileScreen = () => (
 const HomeIcon = (<Icon name="rocket" size={30} color="red" />)
 
 const HomeTabs = TabNavigator({
-  Home: { screen: HomeScreen},
+  Home: { screen: HomeScreen },
   Schedule: { screen: ScheduleScreen },
   Settings: { screen: SettingsScreen }
 },
@@ -45,7 +39,6 @@ const HomeTabs = TabNavigator({
 
 const DrawerStack = DrawerNavigator({
   Home: { screen: HomeTabs },
-  Sample: { screen: SampleScreen },
   Profile: { screen: ProfileScreen },
 })
 

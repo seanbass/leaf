@@ -38,7 +38,7 @@ class SettingsList extends React.Component {
                         />
                         ))
                     }
-                    </List>
+                </List>
             </View>
         )
     }
