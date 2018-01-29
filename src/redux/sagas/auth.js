@@ -60,13 +60,16 @@ const syncUserSaga = function * () {
   while(true) {
     const { error, user } = yield take(channel);
 
-    if (user) yield put(syncUser(user));
+    if (user) {
+      yield put(syncUser(user));
+      yield put(NavigationActions.navigate({ routeName: 'Main' }));
+    } 
     else yield put(syncUser(null));
   }
 }
 
 const loginSuccessSaga = function * () {
-  yield put(NavigationActions.navigate({ routeName: 'Main' }));
+  //yield put(NavigationActions.navigate({ routeName: 'Main' }));
 }
 
 const logoutSuccessSaga = function * () {
@@ -79,8 +82,8 @@ const loginRootSaga = function * (){
     takeLatest(types.LOGIN.REQUEST, loginSaga),
     takeLatest(types.LOGIN.SUCCESS, loginSuccessSaga),
     takeLatest(types.LOGOUT.SUCCESS, logoutSuccessSaga),
-    takeLatest(types.REGISTER.REQUEST, registerSaga),
     takeLatest(types.LOGOUT.REQUEST, logoutSaga),
+    takeLatest(types.REGISTER.REQUEST, registerSaga),
   ]);
 }
 
