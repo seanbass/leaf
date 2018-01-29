@@ -5,19 +5,12 @@ import { StackNavigator, DrawerNavigator, TabNavigator } from "react-navigation"
 import HomeScreen from "../screens/HomeScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import ScheduleScreen from "../screens/ScheduleScreen";
-import Profile from "../screens/Profile";
+import ProfileScreen from "../screens/ProfileScreen";
+
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import {RkConfig, RkButton, RkText} from 'react-native-ui-kitten';
 
 
-const ProfileScreen = () => (
-    <View style={styles.container}>
-     <Profile />
-    </View>
-  );
-
-const HomeIcon = (<Icon name="rocket" size={30} color="red" />)
 
 const HomeTabs = TabNavigator({
   Home: { screen: HomeScreen },
@@ -51,7 +44,7 @@ const DrawerNavigation = StackNavigator({
     headerStyle: {backgroundColor: 'white'},
     title: 'Leaf',
     headerTintColor: '#3e9b54',
-    headerLeft: <Icon name="ios-list" marginLeft={20} size={40} onPress={() => 
+    headerLeft: <Icon style={styles.icon} name="ios-list" onPress={() => 
       navigation.navigate('DrawerToggle')}/>
   })
 })
@@ -77,6 +70,10 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     backgroundColor: 'white',
   },
+  icon: {
+    fontSize: 40,
+    paddingLeft: 15
+  }
 });
 
 

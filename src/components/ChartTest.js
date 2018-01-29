@@ -8,8 +8,6 @@ import {
   View, 
 } from 'react-native';
 
-import { VictoryBar, VictoryArea, VictoryChart, AreaSmoothedChart} from "victory-native";
-import Svg from "react-native-svg";
 
 class Chart extends Component {
   render() {
