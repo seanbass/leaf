@@ -3,16 +3,30 @@ import {
   StyleSheet,
   View,
   Image,
-  Text
+  Text,
+  Button
 } from 'react-native';
 
-import {RkConfig, RkText} from 'react-native-ui-kitten';
+//Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { editProfile, lockProfile } from '../redux/reducers/user.actions'; 
 
-export default class Profile extends Component {
+import EN from 'react-native-vector-icons/Entypo';
+
+class Profile extends Component {
 
   render() {
     //let user = this.props.user;
+    const { profile, editProfile, lockProfile } = this.props
+    var editButton
+    if(profile == "locked") {
+      editButton = <EN style={styles.icon} name="pencil" onPress={editProfile}/>
+    } else {
+      editButton = <EN style={styles.icon} name="squared-cross" onPress={lockProfile}/>
+    }
     return (
+      <View>
       <Image source={require('../img/lights2.jpeg')}
              style={styles.profileBackground}>
         <Image source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
@@ -21,11 +35,25 @@ export default class Profile extends Component {
           Sean
         </Text>
       </Image>
+      {editButton}
+      </View>
 
     )
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    profile: state.user.profile
+  }
+}
+
+const mapDispatchToProps = ( dispatch ) => bindActionCreators({
+  editProfile: () => editProfile(),
+  lockProfile: () => lockProfile()
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)
 
 const styles = StyleSheet.create({
   profileBackground: {
@@ -46,5 +74,8 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     fontSize: 32,
     color: 'white'
+  },
+  icon: {
+    fontSize: 24
   }
 });
