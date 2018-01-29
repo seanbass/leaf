@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form'
 
-import login from './login';
-import nav from './nav';
+import loginReducer from './login';
+import navReducer from './nav';
+import userReducer from './user';
 
 export default combineReducers({
-  nav,
-  login,
+  nav: navReducer,
+  login: loginReducer,
+  user: userReducer,
   form: formReducer
 });

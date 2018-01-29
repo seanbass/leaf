@@ -8,7 +8,7 @@ import { Button } from "react-native-elements";
 
 
 
-let LogoutButton = ( {dispatch} ) => {
+let LogoutButton = ({dispatch}) => {
     
     return (
         <Button 
@@ -17,7 +17,6 @@ let LogoutButton = ( {dispatch} ) => {
         title="Logout"
         onPress={() => dispatch(logout())}
         />
-
     );
 }
 
