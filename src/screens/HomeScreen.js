@@ -16,16 +16,17 @@ import { Button, List, ListItem, Card, } from 'react-native-elements';
 import Chart from '../components/ChartTest';
 import { Measurement, MeasurementContainer } from '../components/Measurements';
 
+import FA from 'react-native-vector-icons/FontAwesome';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Home',
-    /*drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('./chats-icon.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),*/
+    tabBarIcon: ({tintColor}) => (
+      <FA 
+        name="home"
+        style={[styles.navIcons, {color: tintColor}]}
+        />
+    )
   };
 
 
