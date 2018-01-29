@@ -25,7 +25,7 @@ export default class HomeScreen extends React.Component {
       <FA 
         name="home"
         style={[styles.navIcons, {color: tintColor}]}
-        />
+      />
     )
   };
 
@@ -45,4 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingVertical: 30,
   },
+  navIcons: {
+    fontSize: 24
+  }
 });

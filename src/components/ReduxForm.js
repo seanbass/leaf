@@ -11,8 +11,9 @@ import { Button, FormLabel, FormInput } from 'react-native-elements'
 import { SocialIcon } from 'react-native-elements'
 
 //Redux
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 
 
 
