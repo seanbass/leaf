@@ -12,16 +12,22 @@ import {
   ListView,
 } from 'react-native';
 
-
 import { Button, List, ListItem, Card } from 'react-native-elements';
 import LogoutButton from "../components/LogoutButton"
 import HeaderNav from '../components/MyHeader';
 
+import FA from 'react-native-vector-icons/FontAwesome';
 
 
 export default class ScheduleScreen extends React.Component {
   static navigationOptions = {
     title: 'Schedule',
+    tabBarIcon: ({tintColor}) => (
+      <FA
+      name="calendar"
+      style={[styles.navIcons, {color: tintColor}]}
+      />
+    )
   };
 
 
@@ -63,5 +69,8 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16.
+  },
+  navIcons: {
+    fontSize: 24
   }
 });

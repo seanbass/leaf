@@ -18,11 +18,17 @@ import LogoutButton from "../components/LogoutButton";
 import SettingsList from "../components/Settings";
 import HeaderNav from '../components/MyHeader';
 
-
+import FA from 'react-native-vector-icons/FontAwesome';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: null,
+    title: "Settings",
+    tabBarIcon: ({tintColor}) => (
+      <FA 
+      name="cog"
+      style={[styles.navIcon, {color: tintColor}]}
+      />
+    )
   };
 
 
@@ -44,4 +50,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingVertical: 30,
   },
+  navIcon: {
+    fontSize: 24
+  }
 });
