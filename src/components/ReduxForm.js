@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, KeyboardAvoidingView } from 'react-native';
 import { reduxForm, Field} from 'redux-form';
 import PropTypes from 'prop-types';
 
@@ -22,7 +22,7 @@ const { width } = Dimensions.get('window');
 const Form = props => {
 
   return (
-  <View keyboardShouldPersistTaps={'handled'} style={styles.container}>
+  <KeyboardAvoidingView keyboardShouldPersistTaps={'handled'} behavior="padding" style={styles.container}>
     <FormLabel labelStyle={styles.Label}>Email</FormLabel>
      <Field style={styles.field}
         name={'email'}
@@ -55,7 +55,7 @@ const Form = props => {
       color={"#000"}
       />
       <Text style={styles.ForgotPw}>Forgot Password?</Text>
-  </View>
+  </KeyboardAvoidingView>
   );
 }
 

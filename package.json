@@ -16,7 +16,6 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-22.0.2.tar.gz",
     "react-native-dropdownalert": "^3.1.2",
     "react-native-elements": "^0.18.2",
-    "react-native-pathjs-charts": "0.0.32",
     "react-native-simple-login": "^1.1.0",
     "react-native-svg": "^6.0.0",
     "react-native-ui-kitten": "^3.0.0",

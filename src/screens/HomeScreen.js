@@ -13,14 +13,16 @@ import {
 } from 'react-native';
 
 import { Button, List, ListItem, Card, } from 'react-native-elements';
-import Chart from '../components/ChartTest';
+
+import MyWeb from '../components/ChartTest';
+
 import { Measurement, MeasurementContainer } from '../components/Measurements';
 
 import FA from 'react-native-vector-icons/FontAwesome';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: 'Home',
+    title: 'Home',
     tabBarIcon: ({tintColor}) => (
       <FA 
         name="home"
@@ -33,7 +35,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
         <ScrollView style={styles.container}>
-          <MeasurementContainer />
+          <MyWeb />
         </ScrollView>
     );
   }

@@ -42,7 +42,6 @@ const DrawerNavigation = StackNavigator({
   headerMode: 'float',
   navigationOptions: ({navigation}) => ({
     headerStyle: {backgroundColor: 'white'},
-    title: 'Leaf', //this.props.sceenTitle
     headerTintColor: '#3e9b54',
     headerLeft: <Icon style={styles.icon} name="ios-list" onPress={() => 
       navigation.navigate('DrawerToggle')}/>

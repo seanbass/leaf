@@ -1,56 +1,14 @@
-import React, { Component } from "react";
-import { 
-  ScrollView,
-  StyleSheet,
-  Platform,
-  Text,
-  Dimensions,
-  View, 
-} from 'react-native';
+import React, { Component } from 'react';
+import { WebView } from 'react-native';
 
-
-class Chart extends Component {
+export default class MyWeb extends Component {
   render() {
     return (
-      <View style={styles.chartBlock}>
-
-        </View>
+      <WebView
+        //source={{uri: 'https://bl.ocks.org/mbostock/raw/3883245/'}}
+        source={{uri: 'https://us-central1-leaf-autarky.cloudfunctions.net/fillGauge'}}
+        style={{height: 300, width: 300}}
+      />
     );
   }
 }
-
-export default Chart;
-
-const styles = StyleSheet.create({
-  screen: {
-    paddingHorizontal: 15,
-  },
-  statItems: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 15,
-  },
-  statItemContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderRadius: 3,
-    paddingHorizontal: 10,
-    paddingVertical: 10
-  },
-  statItemIcon: {
-    alignSelf: 'center',
-    marginLeft: 10,
-    color: 'white',
-  },
-  statItemValue: {
-    color: 'white',
-  },
-  statItemName: {
-    color: 'white',
-  },
-  chartBlock: {
-    padding: 15,
-    marginBottom: 15,
-    justifyContent: 'center'
-  },
-});
